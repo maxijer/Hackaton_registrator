@@ -18,7 +18,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 private slots:
-    void on_add_click();
+    void on_add_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
