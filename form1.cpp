@@ -1,10 +1,11 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include <QMessageBox>
+#include "form1.h"
+#include "ui_form1.h"
+#include <QSqlDatabase>
+#include<QMessageBox>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+Form1::Form1(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::Form1)
 {
     ui->setupUi(this);
     db = QSqlDatabase::addDatabase("QSQLITE");
@@ -18,13 +19,13 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 
-MainWindow::~MainWindow()
+
+Form1::~Form1()
 {
     delete ui;
 }
 
-
-void MainWindow::on_add_clicked()
+void Form1::on_add_clicked()
 {
     QString name = ui->name->text();
     QString surname = ui->surname->text();
@@ -38,17 +39,23 @@ void MainWindow::on_add_clicked()
     QString email = ui->email->text();
     QString phone = ui->phone->text();
     if (name != "" and surname != "" and last_name != "" and country != "" and spec != "" and skill != "" and size != "" and city != "" and email != "" and phone != "") {
-        ui->name->setText("228282");
         QSqlQuery query = QSqlQuery(db);
         query.prepare("INSERT INTO all_pepole (name, surname, last_name) VALUES(:name, :surname, :last_name)");
         query.bindValue(":name", "Piggy");
         query.bindValue(":surname", " + 49 631322187");
         query.bindValue(":last_name", "piggy@mega.de");
         query.exec();
-
+        QMessageBox::information(this, "Всё заполнено", "Все значения заполнены");
+        this->hide();
     }
     else {
         QMessageBox::information(this, "Не все значения заполнены", "Заполните все значения");
     }
+}
+
+
+void Form1::on_again_clicked()
+{
+    this->hide();
 }
 
