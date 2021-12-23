@@ -1,7 +1,7 @@
 #include "search.h"
 #include "ui_search.h"
 
-Search::Search(QWidget *parent) :
+Search::Search(QWidget *parent) : // код для поиска по имени и фамилии
     QWidget(parent),
     ui(new Ui::Search)
 {
