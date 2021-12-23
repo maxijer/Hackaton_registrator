@@ -13,18 +13,21 @@ SOURCES += \
     form.cpp \
     form1.cpp \
     main.cpp \
+    search.cpp \
     viewer.cpp
 
 HEADERS += \
     deleter.h \
     form.h \
     form1.h \
+    search.h \
     viewer.h
 
 FORMS += \
     deleter.ui \
     form.ui \
     form1.ui \
+    search.ui \
     viewer.ui
 
 # Default rules for deployment.

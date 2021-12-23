@@ -5,6 +5,7 @@
 #include "form1.h"
 #include "viewer.h"
 #include "deleter.h"
+#include "search.h"
 
 namespace Ui {
 class Form;
@@ -25,11 +26,14 @@ private slots:
 
     void on_del_clicked();
 
+    void on_search_clicked();
+
 private:
     Ui::Form *ui;
     Form1 form1;
     Viewer vw;
     Deleter dele;
+    Search ser;
 };
 
 #endif // FORM_H

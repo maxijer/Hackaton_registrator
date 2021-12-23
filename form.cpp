@@ -31,3 +31,9 @@ void Form::on_del_clicked()
     dele.show();
 }
 
+
+void Form::on_search_clicked()
+{
+    ser.show();
+}
+
