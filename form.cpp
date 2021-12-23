@@ -1,7 +1,6 @@
 #include "form.h"
 #include "form1.h"
 #include "ui_form.h"
-#include "mainwindow.h"
 
 Form::Form(QWidget *parent) :
     QWidget(parent),
@@ -18,5 +17,11 @@ Form::~Form()
 void Form::on_add_clicked()
 {
     form1.show();
+}
+
+
+void Form::on_get_all_clicked()
+{
+    vw.show();
 }
 

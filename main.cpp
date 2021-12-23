@@ -1,4 +1,3 @@
-#include "mainwindow.h"
 #include <form.h>
 
 #include <QApplication>

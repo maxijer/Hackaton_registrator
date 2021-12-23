@@ -11,15 +11,18 @@ CONFIG += c++11
 SOURCES += \
     form.cpp \
     form1.cpp \
-    main.cpp
+    main.cpp \
+    viewer.cpp
 
 HEADERS += \
     form.h \
-    form1.h
+    form1.h \
+    viewer.h
 
 FORMS += \
     form.ui \
-    form1.ui
+    form1.ui \
+    viewer.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

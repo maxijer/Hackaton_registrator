@@ -4,6 +4,7 @@
 #include <QWidget>
 #include<QSqlDatabase>
 #include<QSqlQuery>
+#include <viewer.h>
 
 namespace Ui {
 class Form1;
@@ -26,6 +27,7 @@ private:
     Ui::Form1 *ui;
     QSqlDatabase db;
     QSqlQuery *query;
+    Viewer vw;
 };
 
 #endif // FORM1_H

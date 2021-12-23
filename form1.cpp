@@ -40,10 +40,16 @@ void Form1::on_add_clicked()
     QString phone = ui->phone->text();
     if (name != "" and surname != "" and last_name != "" and country != "" and spec != "" and skill != "" and size != "" and city != "" and email != "" and phone != "") {
         QSqlQuery query = QSqlQuery(db);
-        query.prepare("INSERT INTO all_pepole (name, surname, last_name) VALUES(:name, :surname, :last_name)");
-        query.bindValue(":name", "Piggy");
-        query.bindValue(":surname", " + 49 631322187");
-        query.bindValue(":last_name", "piggy@mega.de");
+        query.prepare("INSERT INTO all_pepole (name, surname, last_name, birthday_date, city, country, short_size, email, phone) VALUES(:name, :surname, :last_name, :birthday, :city, :country, :size, :email, :phone)");
+        query.bindValue(":name", name);
+        query.bindValue(":surname", surname);
+        query.bindValue(":last_name", last_name);
+        query.bindValue(":birthday", birthday);
+        query.bindValue(":city", city);
+        query.bindValue(":country", country);
+        query.bindValue(":size", size);
+        query.bindValue(":email", email);
+        query.bindValue(":phone", phone);
         query.exec();
         QMessageBox::information(this, "Всё заполнено", "Все значения заполнены");
         this->hide();
