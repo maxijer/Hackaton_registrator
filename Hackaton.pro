@@ -9,17 +9,20 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    deleter.cpp \
     form.cpp \
     form1.cpp \
     main.cpp \
     viewer.cpp
 
 HEADERS += \
+    deleter.h \
     form.h \
     form1.h \
     viewer.h
 
 FORMS += \
+    deleter.ui \
     form.ui \
     form1.ui \
     viewer.ui

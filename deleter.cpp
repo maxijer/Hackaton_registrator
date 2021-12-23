@@ -1,12 +1,11 @@
-#include "viewer.h"
-#include "ui_viewer.h"
+#include "deleter.h"
+#include "ui_deleter.h"
 #include <QSqlDatabase>
-#include <QSqlQuery>
 #include <QSqlTableModel>
 
-Viewer::Viewer(QWidget *parent) : // Код этого класса отвечает за показ всех значений
+Deleter::Deleter(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Viewer)
+    ui(new Ui::Deleter)
 {
     ui->setupUi(this);
     db = QSqlDatabase::addDatabase("QSQLITE");
@@ -18,12 +17,24 @@ Viewer::Viewer(QWidget *parent) : // Код этого класса отвеча
     ui->tableView->setModel(model);
 }
 
-Viewer::~Viewer()
+Deleter::~Deleter()
 {
     delete ui;
 }
 
-void Viewer::on_pushButton_clicked()
+void Deleter::on_tableView_clicked(const QModelIndex &index)
+{
+    row = index.row();
+}
+
+
+void Deleter::on_del_clicked()
+{
+    model->removeRow(row);
+}
+
+
+void Deleter::on_pushButton_clicked()
 {
     this->hide();
 }

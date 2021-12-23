@@ -3,7 +3,7 @@
 #include <QSqlDatabase>
 #include<QMessageBox>
 
-Form1::Form1(QWidget *parent) :
+Form1::Form1(QWidget *parent) : // код этого класса отвечает за добавление пользователей
     QWidget(parent),
     ui(new Ui::Form1)
 {
